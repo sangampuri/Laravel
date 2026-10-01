@@ -1,11 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DemoController;
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/',[DemoController::class,'index']);
+Route::get('/about',[DemoController::class,'about']);
