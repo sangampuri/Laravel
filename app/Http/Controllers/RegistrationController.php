@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class RegistrationController extends Controller
+{
+    public function index (){
+        return view('form');
+    }
+
+    public function show(Request $request){
+        $request->validate([
+            'name'=> 'required',
+            'email'=> 'required|email',
+            'password'=> 'required',
+            'password_confirmation'=> 'required|same:password'
+        ]);
+        
+            print_r($request->all());
+
+    }
+}
